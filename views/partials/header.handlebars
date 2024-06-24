@@ -1,0 +1,128 @@
+{{!-- <header>
+  <div class="wrapperHeader">
+    <div class="divLogo">
+      <img src="./img/logo.jpg" alt="logo" height="100px" width="100px" />
+      {{! <h1>All Fashion </h1> }}
+    </div>
+
+    <nav class="navLien">
+
+      <button class="menuMobile">Menu</button>
+
+      <ul class="lien">
+        <li>
+          <a href="/">Acceuil</a>
+        </li>
+
+        {{#if acheteur}}
+          <li>
+            <a href="/panier">Panier</a>
+          </li>
+        {{/if}}
+
+        {{#if admin}}
+          <li>
+            <a href="/commande">Commandes</a>
+          </li>
+        {{/if}}
+
+        {{#unless user}}
+          <li>
+            <a href="/inscription">Inscription</a>
+          </li>
+        {{/unless}}
+
+        {{#unless user}}
+          <li>
+            <a href="/connexion">Connection</a>
+          </li>
+        {{/unless}}
+        {{#unless admin}}
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+        {{/unless}}
+        {{#if admin}}
+          <li>
+            <a href="/messages">Messages</a>
+          </li>
+        {{/if}}
+        {{#if user}}
+          <li>
+            <form action="/api/deconnexion" method="post">
+              <input type="submit" value="Deconnexion" />
+            </form>
+          </li>
+        {{/if}}
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script type="module" src="./js/header.js"></script> --}}
+
+<header>
+  <div class="wrapperHeader">
+    <div class="divLogo">
+      <img src="./img/logo.jpg" alt="logo" height="100px" width="100px" />
+      {{! <h1>All Fashion </h1> }}
+    </div>
+
+    <nav class="navLien">
+      <button class="menuMobile">Menu</button>
+      <div class="navWrapper">
+        <!-- Ajout du wrapper -->
+        <ul class="lien">
+          <li>
+            <a href="/">Acceuil</a>
+          </li>
+
+          {{#if acheteur}}
+            <li>
+              <a href="/panier">Panier</a>
+            </li>
+          {{/if}}
+
+          {{#if admin}}
+            <li>
+              <a href="/commande">Commandes</a>
+            </li>
+          {{/if}}
+
+          {{#unless user}}
+            <li>
+              <a href="/inscription">Inscription</a>
+            </li>
+          {{/unless}}
+
+          {{#unless user}}
+            <li>
+              <a href="/connexion">Connection</a>
+            </li>
+          {{/unless}}
+          {{#unless admin}}
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          {{/unless}}
+          {{#if admin}}
+            <li>
+              <a href="/messages">Messages</a>
+            </li>
+          {{/if}}
+          {{#if user}}
+            <li>
+              <form action="/api/deconnexion" method="post">
+                <input type="submit" value="Deconnexion" />
+              </form>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+      <!-- Fin du wrapper -->
+    </nav>
+  </div>
+</header>
+
+<script type="module" src="./js/header.js"></script>

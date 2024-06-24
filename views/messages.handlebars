@@ -1,0 +1,20 @@
+<h1>Liste des Messages</h1>
+<ul class="Umessage">
+  {{#each messages}}
+    <li class="Lmessages">
+      <strong>Nom :</strong>
+      {{this.name}}
+      <br />
+      <strong>Email :</strong>
+      {{this.email}}
+      <br />
+      <strong>Message :</strong>
+      {{this.message}}
+      <br />
+      <strong>Date :</strong>
+      {{this.created_at}}
+      <br />
+    </li>
+    <button class="boutonTraite" data-id="{{this.id_message}}">Traité</button>
+  {{/each}}
+</ul>
