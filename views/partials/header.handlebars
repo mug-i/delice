@@ -1,13 +1,21 @@
-{{!-- <header>
+<header>
   <div class="wrapperHeader">
     <div class="divLogo">
-      <img src="./img/logo.jpg" alt="logo" height="100px" width="100px" />
+      <img src="./img/logo.jpg" alt="logo" />
       {{! <h1>All Fashion </h1> }}
     </div>
 
     <nav class="navLien">
-
-      <button class="menuMobile">Menu</button>
+      {{! class="menuMobile" }}
+      <button
+        type="button"
+        aria-label="toggle curtain navigation"
+        class="nav-toggler"
+      >
+        <span class="line l1"></span>
+        <span class="line l2"></span>
+        <span class="line l3"></span>
+      </button>
 
       <ul class="lien">
         <li>
@@ -58,11 +66,61 @@
       </ul>
     </nav>
   </div>
+
+  {{! navbar mobile }}
+  <nav class="navMobile">
+    <ul class="lien">
+      <li>
+        <a href="/">Acceuil</a>
+      </li>
+
+      {{#if acheteur}}
+        <li>
+          <a href="/panier">Panier</a>
+        </li>
+      {{/if}}
+
+      {{#if admin}}
+        <li>
+          <a href="/commande">Commandes</a>
+        </li>
+      {{/if}}
+
+      {{#unless user}}
+        <li>
+          <a href="/inscription">Inscription</a>
+        </li>
+      {{/unless}}
+
+      {{#unless user}}
+        <li>
+          <a href="/connexion">Connection</a>
+        </li>
+      {{/unless}}
+      {{#unless admin}}
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      {{/unless}}
+      {{#if admin}}
+        <li>
+          <a href="/messages">Messages</a>
+        </li>
+      {{/if}}
+      {{#if user}}
+        <li>
+          <form action="/api/deconnexion" method="post">
+            <input type="submit" value="Deconnexion" />
+          </form>
+        </li>
+      {{/if}}
+    </ul>
+  </nav>
 </header>
 
-<script type="module" src="./js/header.js"></script> --}}
+<script type="module" src="./js/header.js"></script>
 
-<header>
+{{!-- <header>
   <div class="wrapperHeader">
     <div class="divLogo">
       <img src="./img/logo.jpg" alt="logo" height="100px" width="100px" />
@@ -70,7 +128,11 @@
     </div>
 
     <nav class="navLien">
-      <button class="menuMobile">Menu</button>
+      <button
+        class="menuMobile"
+        type="button"
+        aria-label="toggle curtain navigation"
+      ></button>
       <div class="navWrapper">
         <!-- Ajout du wrapper -->
         <ul class="lien">
@@ -125,4 +187,4 @@
   </div>
 </header>
 
-<script type="module" src="./js/header.js"></script>
+<script type="module" src="./js/header.js"></script> --}}
