@@ -341,16 +341,21 @@ app.get("/api/stream", (request, response) => {
 });
 
 // Démarrage du serveur
-if (process.env.NODE_ENV === "development") {
-  let credentials = {
-    key: await readFile("./security/localhost.key"),
-    cert: await readFile("./security/localhost.cert"),
-  };
-  https.createServer(credentials, app).listen(process.env.PORT);
-  console.info(`Serveurs démarré:`);
-  console.info(`https://localhost:${process.env.PORT}`);
-} else {
-  app.listen(process.env.PORT);
-  console.info(`Serveurs démarré:`);
-  console.info(`http://localhost:${process.env.PORT}`);
-}
+// if (process.env.NODE_ENV === "development") {
+//   let credentials = {
+//     key: await readFile("./security/localhost.key"),
+//     cert: await readFile("./security/localhost.cert"),
+//   };
+//   https.createServer(credentials, app).listen(process.env.PORT);
+//   console.info(`Serveurs démarré:`);
+//   console.info(`https://localhost:${process.env.PORT}`);
+// } else {
+//   app.listen(process.env.PORT);
+//   console.info(`Serveurs démarré:`);
+//   console.info(`http://localhost:${process.env.PORT}`);
+// }
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server running on port ${process.env.PORT || 3000}`);
+});
+
+export default app;
