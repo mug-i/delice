@@ -1,16 +1,5 @@
 {
   "version": 2,
   "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-  "env": {
-    "NODE_ENV": "production",
-    "PORT": "5000",
-    "DB_FILE": "resto.db",
-    "SESSION_SECRET": "mcfvgbhnjjj!~iphuogyvi@bjjgv%konjubl&gdbyn*rbtrnnI^nyrnyrn5yyn$t414rwrbebynhgdfvynrnryn4j58%eunnbtkhbietkbkthbtbenn44ndgbbrthetbdfhetehtehyrjatbetrnyea54btrb6yrdnsbrnrnyrnmyratnyynrttmkptemgbttsvev5h4nw46h4bwh5"
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
 }
