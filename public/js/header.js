@@ -34,3 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
 //     }
 //   });
 // });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Obtenir l'URL actuelle
+  const currentUrl = window.location.pathname;
+
+  // Sélectionner tous les liens de navigation
+  const links = document.querySelectorAll(".lien a");
+
+  // Parcourir chaque lien et ajouter la classe 'active' si le lien correspond à l'URL actuelle
+  links.forEach((link) => {
+    if (link.getAttribute("href") === currentUrl) {
+      link.classList.add("active");
+    }
+  });
+});

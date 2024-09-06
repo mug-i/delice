@@ -73,7 +73,7 @@ h2 {
 
 .divLogo img {
   border-radius: 50%; /* Ajouter une bordure arrondie au logo */
-  max-width: 25%;
+  max-width: 12%;
   height: auto;
 }
 
@@ -95,7 +95,8 @@ h2 {
   font-family: Arial Narrow, sans-serif;
 }
 
-.navLien a:hover {
+.navLien a:hover,
+.navLien a.active {
   color: #007bff; /* Couleur du texte des liens au survol */
 }
 
@@ -148,6 +149,10 @@ h2 {
 .navMobile ul {
   list-style-type: none; /* Supprimer les puces de la liste */
 }
+.navmobile li {
+  margin-bottom: 2rem;
+  border-style: solid;
+}
 .navMobile {
   display: none;
   width: 97.5%;
@@ -155,52 +160,6 @@ h2 {
 
 .navMobile .lien {
   display: none;
-}
-/* Médias query pour les écrans de moins de 768px */
-@media (max-width: 768px) {
-  /* .menuMobile {
-    display: block;
-  }
-
-  /* Vous pouvez également ajouter des styles pour cacher le menu principal */
-  /* .navLien .lien {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    background-color: transparent;
-    box-shadow: none;
-  } */
-
-  .navWrapper {
-    background-color: white;
-    height: calc(100vh - 50px); /* Soustrait la hauteur du bouton menu */
-    overflow-y: auto; /* Ajoute une barre de défilement si nécessaire */
-    display: none; /* Caché par défaut sur mobile */
-  }
-
-  .nav-toggler {
-    display: flex; /* Afficher le bouton de menu sur mobile */
-  }
-
-  .lien {
-    display: none; /* Cacher la liste de liens par défaut sur mobile */
-  }
-  .navLien ul {
-    display: none;
-  }
-
-  .navLien.active .navWrapper {
-    display: block; /* Afficher le wrapper lorsque le menu est ouvert */
-  }
-
-  .navLien.active .lien {
-    display: block; /* Afficher la liste de liens lorsque le menu est ouvert */
-  }
-  .navMobile .lien {
-    display: block;
-    background-color: #f8f9fa;
-    margin-top: 0.2em;
-  }
 }
 
 /* .wrapperHeader {
@@ -281,9 +240,9 @@ input[type="button"]:disabled:hover {
 .menu img {
   display: block;
   width: 100%;
-  height: 260px;
-
+  height: 150px;
   object-fit: cover;
+  border-radius: 10%;
 }
 
 /*
@@ -645,4 +604,59 @@ header input {
   padding: 20px;
   margin-top: 2rem;
   border-color: #ccc;
+}
+
+/* Médias query pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+  /* .menuMobile {
+    display: block;
+  }
+
+  /* Vous pouvez également ajouter des styles pour cacher le menu principal */
+  /* .navLien .lien {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    box-shadow: none;
+  } */
+
+  .navWrapper {
+    background-color: white;
+    height: calc(100vh - 50px); /* Soustrait la hauteur du bouton menu */
+    overflow-y: auto; /* Ajoute une barre de défilement si nécessaire */
+    display: none; /* Caché par défaut sur mobile */
+  }
+
+  .nav-toggler {
+    display: flex; /* Afficher le bouton de menu sur mobile */
+  }
+
+  .lien {
+    display: none; /* Cacher la liste de liens par défaut sur mobile */
+  }
+  .navLien ul {
+    display: none;
+  }
+
+  .navLien.active .navWrapper {
+    display: block; /* Afficher le wrapper lorsque le menu est ouvert */
+  }
+
+  .navLien.active .lien {
+    display: block; /* Afficher la liste de liens lorsque le menu est ouvert */
+  }
+  .navMobile .lien {
+    display: block;
+    background-color: #f8f9fa;
+    margin-top: 0.2em;
+  }
+  .menu img {
+    width: 75%;
+    height: 150px;
+  }
+
+  .boutonAjouter {
+    width: 75%;
+  }
 }
